@@ -19,4 +19,4 @@ jobs:
       - name: Run install
         env:
           GITHUB_WORKSPACE: ~/.dotfiles
-        run: script/install;
+        run: script/bootstrap; script/install;
