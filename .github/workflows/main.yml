@@ -16,7 +16,5 @@ jobs:
       - name: Install zsh
         if: runner.os == 'Linux'
         run: sudo apt-get update; sudo apt-get install zsh; sudo chsh -s $(which zsh);
-      - name: Run bootstrap
-        run: script/bootstrap;
       - name: Run install
         run: script/install;
