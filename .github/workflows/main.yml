@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install zsh
+        if: runner.os == 'Linux'
+        run: sudo apt-get update; sudo apt-get install zsh; chsh -s $(which zsh);
+      - name: Run bootstrap
+        run: script/bootstrap;
+      - name: Run install
+        run: script/install;
