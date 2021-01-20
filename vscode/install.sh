@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo snap install -y --classic code
+sudo snap install --classic code
 
 ln -s $(pwd)/../../vscode/vsc_settings.json $HOME/.config/Code/User/settings.json
 function install {
