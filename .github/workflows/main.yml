@@ -17,5 +17,6 @@ jobs:
         if: runner.os == 'Linux'
         run: sudo apt-get update; sudo apt-get install zsh; sudo chsh -s $(which zsh);
       - name: Run install
-        GITHUB_WORKSPACE: ~/.dotfiles
+        env:
+          GITHUB_WORKSPACE: ~/.dotfiles
         run: script/install;
